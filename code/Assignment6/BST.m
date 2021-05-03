@@ -18,9 +18,59 @@
     return self;
 }
 
+-(int)size{
+    int count = 0;
+    return [self sizeHelper:self.root count:count];
+}
 
--(void)preorder{
+-(int)sizeHelper:(ListNode *)node count:(int)count{
     
+    if(node == nil){
+        return count;
+    }
+    else {
+        count++;
+        return [self sizeHelper:node.left count:count] + [self sizeHelper:node.right count:count];
+    }
+    
+}
+
+-(void)postorder{
+    [self postoderHelper:self.root];
+}
+
+-(void)postoderHelper:(ListNode *)node{
+    
+    if(node == nil){
+        return;
+    }
+    
+    //go through branches first
+    [self postoderHelper:node.left];
+    [self postoderHelper:node.right];
+    
+    //print obj
+    NSLog(@"%i",node.object);
+}
+
+//print objects in preorder
+-(void)preorder{
+    [self preorderHelper:self.root];
+}
+
+-(void)preorderHelper:(ListNode *)node{
+    
+    if(node == nil){
+        return;
+    }
+    
+    //first print int
+    NSLog(@"%i",node.object);
+    
+    //recur on both branches
+    [self preorderHelper:node.right];
+    
+    [self preorderHelper:node.left];
 }
 
 //print objects based on level they are in
