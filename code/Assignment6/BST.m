@@ -18,6 +18,54 @@
     return self;
 }
 
+
+-(void)preorder{
+    
+}
+
+//print objects based on level they are in
+-(void)levelorder{
+    int height = [self height];
+    for(int i=1;i<height;i++){
+        [self levelOderHelper:self.root level:i];
+    }
+}
+
+-(void)levelOderHelper:(ListNode *)current level:(int)level{
+    
+    if(current == nil){
+        return;
+    }
+    if(level ==1){
+        NSLog(@"%i",current.object);
+    } else if (level > 1) {
+        [self levelOderHelper:current.left level:level-1];
+        [self levelOderHelper:current.right level:level-1];
+    }
+}
+
+
+//levels of the BST
+-(int)height{
+    return [self heightHelper:self.root];
+}
+
+-(int)heightHelper: (ListNode *)current{
+    if (self.root == nil){
+        return 0;
+    }
+    else {
+        int left_height= [self heightHelper:current.left];
+        int right_height = [self heightHelper:current.right];
+        
+        if(left_height > right_height) {
+            return left_height+1;
+        } else {
+            return right_height+1;
+        }
+    }
+}
+
 //start at root, and go left until a node doesn't have a left child. THat node is min
 -(int)min{ //wrapper
     return [self recurMin:self.root];
@@ -65,39 +113,122 @@
     }
 }
 
+//contains
+-(bool)contains:(int)key{
+    if(self.root == nil){ // if tree is empty, doesn't contain anything
+        return false;
+    }
+    return [self recurContains:key Node:self.root];
+}
 
-
-
-
-//need to test this out first 
--(void)put: (int)Key{
-    if(self.root == nil){ // base
-        self.root = [[ListNode alloc] initWithObject:Key];
-    } else if (Key > self.root.object){
-        //recursion into right side
-        [self putRecur:self.root.right value:Key];
-    } else if (Key < self.root.object) {
-        //recursion into left side
-        [self putRecur:self.root.right value:Key];
+-(bool)recurContains:(int)key Node:(ListNode *)node{
+    
+    //base case
+    if(node == nil){
+        return false;
+    }
+    if(node.object == key){
+        return true;
     }
     
+    //step case
+    if(key < node.object){
+        return [self recurContains:key Node:node.left];
+    }
+    return [self recurContains:key Node:node.right];
 }
 
--(void)putRecur:(ListNode *)currentNode value:(int)Key{
+//put method
+// if tree is empty, new node becomes root
+// recursively go to left or right depending on the key value(less or greater)
+//if the node we have traversed to is nil, add node there
+-(void)put:(int)Key{
     
-    //base for right side insert
-    if(currentNode.object < Key && currentNode.right == nil){
-        currentNode.right =  [[ListNode alloc] initWithObject:Key];
-        //base for left side insert
-    } else  if(currentNode.object > Key && currentNode.left == nil){
-        currentNode.left = [[ListNode alloc] initWithObject:Key];
-    } else if (Key > currentNode.object){
-        [self putRecur:currentNode.right value:Key];
-    } else if (Key < currentNode.object) {
-        [self putRecur:currentNode.left value:Key];
-    } //got to keep checking until there is a possible insertable place
-    
-    
+    if(self.root == nil){
+        self.root = [[ListNode alloc] initWithObject:Key];
+    } else {
+        [self recurPut:Key node:self.root];
+    }
 }
+
+-(void)recurPut:(int)key node:(ListNode *)node{
+    
+    if(node.object > key){
+        if(node.left == nil){
+            node.left = [[ListNode alloc] initWithObject:key];
+        } else {
+            [self recurPut:key node:node.left];
+        }
+    } else if (node.object < key){
+        if (node.right == nil){
+            node.right = [[ListNode alloc] initWithObject:key];
+        } else {
+            [self recurPut:key node:node.right];
+        }
+    }
+}
+
+//inorder traversal
+-(void)inorder{
+    [self inorderHelper:self.root];
+}
+
+-(void)inorderHelper:(ListNode *)node{
+    if(node != nil){
+        [self inorderHelper:node.left];
+        NSLog(@"%i",node.object);
+        [self inorderHelper:node.right];
+    }
+}
+
+//min value in subtree
+-(ListNode *) getMinKey: (ListNode *) current{
+    while (current.left != nil){
+        current = current.left;
+    }
+    return current;
+}
+
+//done, but unsure if it works completely
+-(void)Delete:(int)Key{
+    ListNode * deletedNode = [[ListNode alloc] init];
+    deletedNode = [self deleteHelper:Key node:self.root];
+}
+
+-(ListNode *)deleteHelper:(int)key node:(ListNode *)node{
+    
+    //base case, tree is empty
+    if(node == nil) return node;
+    
+    //step case
+    if (key < node.object){
+        node.left = [self deleteHelper:key node:node.left];
+    } else if (key > node.object){
+        node.right = [self deleteHelper:key node:node.right];
+    }
+    
+    //if key is the root's
+    // then we have to account for deletion of the root
+    
+    else{
+        if(node.left == nil){
+            return node.right;
+        } else if(node.right == nil){
+            return node.left;
+        }
+        
+        //node with two children case get smallest in the right subtree
+        node.object = [self min];
+        
+        //delete afterwards
+        node.right = [self deleteHelper:key node:node.right];
+    }
+    return node;
+}
+
+
+
+
+
 
 @end
