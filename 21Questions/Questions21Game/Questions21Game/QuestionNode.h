@@ -12,7 +12,6 @@
 
 @property NSString * text;
 
-@property bool isQorA; 
 
 //right is yes, left is no
 @property QuestionNode * yes;
@@ -21,8 +20,9 @@
 
 -(instancetype)init;
 
--(instancetype)initWithText;
+-(instancetype)initWithText:(NSString *)textObj;
 
+-(BOOL)isQuestion;
 @end
 
 #endif /* QuestionNode_h */
