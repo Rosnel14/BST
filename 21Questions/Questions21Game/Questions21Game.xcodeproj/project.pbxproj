@@ -15,6 +15,9 @@
 		98996E37264195A5004EDDAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98996E35264195A5004EDDAA /* Main.storyboard */; };
 		98996E39264195A6004EDDAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98996E38264195A6004EDDAA /* Assets.xcassets */; };
 		98996E3C264195A6004EDDAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98996E3B264195A6004EDDAA /* main.m */; };
+		D6146872264250950034921B /* QuestionNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D6146871264250950034921B /* QuestionNode.m */; };
+		D6146877264250AE0034921B /* QuestionTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D6146876264250AE0034921B /* QuestionTree.m */; };
+		D614687C264250C30034921B /* gameRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = D614687B264250C30034921B /* gameRunner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,12 @@
 		98996E38264195A6004EDDAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98996E3A264195A6004EDDAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98996E3B264195A6004EDDAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D6146870264250850034921B /* QuestionNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionNode.h; sourceTree = "<group>"; };
+		D6146871264250950034921B /* QuestionNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionNode.m; sourceTree = "<group>"; };
+		D6146875264250A40034921B /* QuestionTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionTree.h; sourceTree = "<group>"; };
+		D6146876264250AE0034921B /* QuestionTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionTree.m; sourceTree = "<group>"; };
+		D614687A264250BB0034921B /* gamerRunner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gamerRunner.h; sourceTree = "<group>"; };
+		D614687B264250C30034921B /* gameRunner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gameRunner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +76,12 @@
 				98996E29264195A5004EDDAA /* AppDelegate.m */,
 				98996E2B264195A5004EDDAA /* GameScene.sks */,
 				98996E2D264195A5004EDDAA /* Actions.sks */,
+				D6146870264250850034921B /* QuestionNode.h */,
+				D6146871264250950034921B /* QuestionNode.m */,
+				D6146875264250A40034921B /* QuestionTree.h */,
+				D6146876264250AE0034921B /* QuestionTree.m */,
+				D614687A264250BB0034921B /* gamerRunner.h */,
+				D614687B264250C30034921B /* gameRunner.m */,
 				98996E2F264195A5004EDDAA /* GameScene.h */,
 				98996E30264195A5004EDDAA /* GameScene.m */,
 				98996E32264195A5004EDDAA /* GameViewController.h */,
@@ -149,10 +164,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6146872264250950034921B /* QuestionNode.m in Sources */,
 				98996E31264195A5004EDDAA /* GameScene.m in Sources */,
 				98996E34264195A5004EDDAA /* GameViewController.m in Sources */,
+				D6146877264250AE0034921B /* QuestionTree.m in Sources */,
 				98996E3C264195A6004EDDAA /* main.m in Sources */,
 				98996E2A264195A5004EDDAA /* AppDelegate.m in Sources */,
+				D614687C264250C30034921B /* gameRunner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
