@@ -8,5 +8,7 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface GameScene : SKScene
+@property (weak, nonatomic) IBOutlet UITextField *inputText;
+@property (weak, nonatomic) IBOutlet UILabel *labelText;
 
 @end

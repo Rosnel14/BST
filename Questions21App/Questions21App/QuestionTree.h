@@ -1,19 +1,21 @@
 //
 //  QuestionTree.h
-//  Questions21Game
+//  Questions21App
 //
-//  Created by hackIntosh on 5/5/21.
+//  Created by Rosnel Leyva-Cortés on 5/6/21.
 //
 
 #ifndef QuestionTree_h
 #define QuestionTree_h
+
 #import "QuestionNode.h"
 
 @interface QuestionTree: NSObject
 
 @property QuestionNode * root;
 
--(instancetype)initWithRoot:(NSString *)root;
+//start with a question
+-(instancetype)initWithRoot: (NSString *)rootObj yesQuestion:(NSString *)yesQ noQuestion:(NSString *)noQ;
 
 -(void)Delete: (NSString *)text;
 
@@ -23,7 +25,9 @@
 
 -(void)put:(NSString *)text;
 
--(int)size; 
+-(int)size;
+
+-(void)playGame;
 
 @end
 

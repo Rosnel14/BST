@@ -73,6 +73,10 @@
     for (UITouch *t in touches) {[self touchUpAtPoint:[t locationInNode:self]];}
 }
 
+- (IBAction)buttonPress:(id)sender {
+    NSString * user = _inputText.text;
+}
+
 
 -(void)update:(CFTimeInterval)currentTime {
     // Called before each frame is rendered

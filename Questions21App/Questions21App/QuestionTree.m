@@ -1,8 +1,8 @@
 //
 //  QuestionTree.m
-//  Questions21Game
+//  Questions21App
 //
-//  Created by hackIntosh on 5/5/21.
+//  Created by Rosnel Leyva-Cortés on 5/6/21.
 //
 
 #import <Foundation/Foundation.h>
@@ -10,10 +10,12 @@
 
 @implementation QuestionTree
 
--(instancetype)initWithRoot: (NSString *)rootObj{
+-(instancetype)initWithRoot: (NSString *)rootObj yesQuestion:(NSString *)yesQ noQuestion:(NSString *)noQ{
     if(self){
         self = [super init];
         self.root = [[QuestionNode alloc] initWithText:rootObj];
+        self.root.yes = [[QuestionNode alloc] initWithText:yesQ];
+        self.root.no = [[QuestionNode alloc] initWithText:noQ];
     }
     return self;
 }
@@ -41,15 +43,9 @@
 }
 
 
-
-//not a size difference now, how to determine yes or no?
--(void)put:(NSString *)text{
-    
-}
-
-//same thing with delete, how to determine yes or no?
--(void)Delete:(NSString *)text{
-    
+//traversal in Qnode class
+-(void)playGame{
+    [self.root traverse];
 }
 
 //inorder traversal
@@ -81,5 +77,4 @@
     }
     
 }
-
 @end

@@ -1,8 +1,8 @@
 //
 //  QuestionNode.h
-//  Questions21Game
+//  Questions21App
 //
-//  Created by hackIntosh on 5/5/21.
+//  Created by Rosnel Leyva-Cortés on 5/6/21.
 //
 
 #ifndef QuestionNode_h
@@ -10,7 +10,7 @@
 
 @interface QuestionNode : NSObject
 
-@property NSString * text;
+@property (nonatomic) NSString * text;
 
 
 //right is yes, left is no
@@ -23,6 +23,8 @@
 -(instancetype)initWithText:(NSString *)textObj;
 
 -(BOOL)isQuestion;
+
+-(void)traverse;
 @end
 
 #endif /* QuestionNode_h */
