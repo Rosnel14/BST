@@ -8,5 +8,21 @@
 #ifndef GameRunner_h
 #define GameRunner_h
 
+#import "QuestionNode.h"
+#import "QuestionTree.h"
+
+@interface GameRunner: NSObject
+
+-(QuestionTree *)startNewGame;
+
+-(instancetype)init;
+
+-(void)runGame;
+
+-(BOOL)playAgain;
+
+-(void)playFullGame;
+
+@end
 
 #endif /* GameRunner_h */
