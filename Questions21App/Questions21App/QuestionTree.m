@@ -10,15 +10,15 @@
 
 @implementation QuestionTree
 
--(instancetype)initWithRoot: (NSString *)rootObj yesQuestion:(NSString *)yesQ noQuestion:(NSString *)noQ{
+//start with one answer node already, so initial guess is computer
+-(instancetype)init{
     if(self){
         self = [super init];
-        self.root = [[QuestionNode alloc] initWithText:rootObj];
-        self.root.yes = [[QuestionNode alloc] initWithText:yesQ];
-        self.root.no = [[QuestionNode alloc] initWithText:noQ];
+        self.root = [[QuestionNode alloc] initWithFull:@"computer" yesNode:nil noNode:nil];
     }
     return self;
 }
+
 
 
 //levels of the BST
@@ -42,11 +42,6 @@
     }
 }
 
-
-//traversal in Qnode class
--(void)playGame{
-    [self.root traverse];
-}
 
 //inorder traversal
 -(void)inorder{
@@ -77,4 +72,6 @@
     }
     
 }
+
+
 @end

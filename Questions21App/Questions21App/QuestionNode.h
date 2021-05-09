@@ -10,8 +10,7 @@
 
 @interface QuestionNode : NSObject
 
-@property (nonatomic) NSString * text;
-
+@property NSString * text;
 
 //right is yes, left is no
 @property QuestionNode * yes;
@@ -20,11 +19,9 @@
 
 -(instancetype)init;
 
--(instancetype)initWithText:(NSString *)textObj;
+-(instancetype)initWithFull:(NSString *)textObj yesNode:(QuestionNode *)yesNode noNode:(QuestionNode *)noNode;
 
--(BOOL)isQuestion;
-
--(void)traverse;
+-(instancetype)initWithText:(NSString *)text;
 @end
 
 #endif /* QuestionNode_h */

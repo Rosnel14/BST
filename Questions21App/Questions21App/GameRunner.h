@@ -2,27 +2,21 @@
 //  GameRunner.h
 //  Questions21App
 //
-//  Created by Rosnel Leyva-Cortés on 5/6/21.
+//  Created by Rosnel Leyva-Cortés on 5/8/21.
 //
 
 #ifndef GameRunner_h
 #define GameRunner_h
-
-#import "QuestionNode.h"
+#import "ViewController.h"
 #import "QuestionTree.h"
+#import "QuestionNode.h"
 
-@interface GameRunner: NSObject
+@interface GameRunner : NSObject
 
--(QuestionTree *)startNewGame;
 
--(instancetype)init;
 
--(void)runGame;
-
--(BOOL)playAgain;
-
--(void)playFullGame;
 
 @end
+
 
 #endif /* GameRunner_h */

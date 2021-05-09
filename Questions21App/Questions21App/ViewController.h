@@ -10,6 +10,14 @@
 @interface ViewController : UIViewController
 
 
+@property (weak, nonatomic) IBOutlet UILabel *DisplayField;
+@property (weak, nonatomic) IBOutlet UITextField *UserInputField;
+@property (weak, nonatomic) IBOutlet UIButton *userResponseButton;
+@property (weak, nonatomic) IBOutlet UITextField *yOrNbox;
+@property (weak, nonatomic) IBOutlet UITextField *userNewQuestionField;
+
+@property (weak, nonatomic) IBOutlet UITextField *userNewObjectField;
+
 
 @end
 

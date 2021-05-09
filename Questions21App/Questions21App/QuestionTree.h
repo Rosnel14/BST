@@ -15,9 +15,7 @@
 @property QuestionNode * root;
 
 //start with a question
--(instancetype)initWithRoot: (NSString *)rootObj yesQuestion:(NSString *)yesQ noQuestion:(NSString *)noQ;
-
--(void)Delete: (NSString *)text;
+-(instancetype)init;
 
 -(int)height; //for debugging
 
@@ -27,7 +25,6 @@
 
 -(int)size;
 
--(void)playGame;
 
 @end
 
