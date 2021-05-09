@@ -16,7 +16,6 @@
 		98B7F88C264427E40063FC9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F88B264427E40063FC9E /* main.m */; };
 		98B7F8A4264429440063FC9E /* QuestionNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F8A3264429440063FC9E /* QuestionNode.m */; };
 		98B7F8A62644294D0063FC9E /* QuestionTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F8A52644294D0063FC9E /* QuestionTree.m */; };
-		98B7F8B1264718100063FC9E /* GameRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F8B0264718100063FC9E /* GameRunner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +35,6 @@
 		98B7F8A3264429440063FC9E /* QuestionNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionNode.m; sourceTree = "<group>"; };
 		98B7F8A52644294D0063FC9E /* QuestionTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionTree.m; sourceTree = "<group>"; };
 		98B7F8A7264429560063FC9E /* QuestionTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionTree.h; sourceTree = "<group>"; };
-		98B7F8AF264718090063FC9E /* GameRunner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameRunner.h; sourceTree = "<group>"; };
-		98B7F8B0264718100063FC9E /* GameRunner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameRunner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +73,6 @@
 				98B7F87D264427E30063FC9E /* SceneDelegate.m */,
 				98B7F87F264427E30063FC9E /* ViewController.h */,
 				98B7F880264427E30063FC9E /* ViewController.m */,
-				98B7F8AF264718090063FC9E /* GameRunner.h */,
-				98B7F8B0264718100063FC9E /* GameRunner.m */,
 				98B7F882264427E30063FC9E /* Main.storyboard */,
 				98B7F885264427E40063FC9E /* Assets.xcassets */,
 				98B7F887264427E40063FC9E /* LaunchScreen.storyboard */,
@@ -165,7 +160,6 @@
 				98B7F87B264427E30063FC9E /* AppDelegate.m in Sources */,
 				98B7F8A62644294D0063FC9E /* QuestionTree.m in Sources */,
 				98B7F88C264427E40063FC9E /* main.m in Sources */,
-				98B7F8B1264718100063FC9E /* GameRunner.m in Sources */,
 				98B7F87E264427E30063FC9E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
