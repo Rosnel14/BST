@@ -10,6 +10,8 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+    
+        BST * myTree = [[BST alloc] initWithRoot:4];
         
 
     }

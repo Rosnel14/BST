@@ -30,7 +30,7 @@
 }
 
 
-- (IBAction)enterResponseButton:(id)sender {
+-(IBAction)enterResponseButton:(id)sender {
     userTextResponse = _UserInputField.text;
     gameTree = [[QuestionTree alloc] init];
     if([self isAnswerNode:gameTree.root]){
@@ -39,8 +39,7 @@
         [_DisplayField setText:gameTree.root.text];
     }
 }
-- (IBAction)startGame:(id)sender {
-    
+-(IBAction)startGame:(id)sender {
     
     if([self isAnswerNode:gameTree.root]){
         if(yesOrNo == true){
